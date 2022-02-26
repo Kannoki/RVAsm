@@ -33,14 +33,15 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.ItemAdaptor>{
         if(item==null){
             return;
         }
-        holder.name.setText(item.getName() + position + 1);
-        holder.des.setText(item.getName() + position + 1);
+        holder.name.setText(item.getName() + " " +(position + 1));
+        holder.des.setText(item.getDes() + " " +(position + 1));
 
     }
 
     @Override
     public int getItemCount() {
-        if (itemArrayList!=null){
+        if (itemArrayList != 
+                null){
             return itemArrayList.size();
         }
         return 0;
@@ -54,8 +55,8 @@ public class Adaptor extends RecyclerView.Adapter<Adaptor.ItemAdaptor>{
         public ItemAdaptor(@NonNull View itemView) {
             super(itemView);
 
-            TextView tvName = itemView.findViewById(R.id.itemName);
-            TextView tvDes = itemView.findViewById(R.id.itemDes);
+             name = itemView.findViewById(R.id.itemName);
+            des = itemView.findViewById(R.id.itemDes);
 
        }
     }
